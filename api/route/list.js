@@ -1,10 +1,16 @@
-function model_list(req,res,connection){
+function model_list(req,res,connection,params){
+	var sx = params.sx
+  	var qty = params.qty;
+	var page = qty*(params.page - 1);
+
 	//执行数据库语言
-	connection.query(`select img from mo_list`,function(error,results,fields){
+	connection.query(`select img from mo_list limit ${page} , ${qty}`,function(error,results,fields){
 		if (error) {throw error};
 
 		var obj = {
-			list:results
+			list:results,
+			qty:qty,
+			pageNum:page
 		}
 		res.send(JSON.stringify(obj));
 	});

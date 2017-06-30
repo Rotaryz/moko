@@ -31,9 +31,14 @@ app.get('/rencai',function(req,res){
 // 列表
 app.get('/list',function(req,res){
 	res.append('Access-Control-Allow-Origin','*');
+	var params = req.query;
 	// 查询数据库
 	createConnection();
 	connection.connect();
-	require('./route/list.js').model_list(req,res,connection)
+	require('./route/list.js').model_list(req,res,connection,params);
 })
-app.listen(55555)
+var server = app.listen(55555,function(host,port){
+ 	var host = server.address().address;
+ 	var port = server.address().port;
+ 	console.log("应用实例，访问地址为 http://%s:%s", host, port)
+})

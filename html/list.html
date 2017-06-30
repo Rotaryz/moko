@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">	
+	<title>MOKO!美空网 MTB美空人才库</title>
+	<link rel="stylesheet" href="../css/list.css">
+	<link rel="stylesheet" href="../css/weui.css" />
+	<script src="../js/swiper.jquery.js"></script>
+</head>
+<body>
+	<header>
+		<h1 class="list">美空人才库</h1>
+		<ul class="xiala relative fp"> 
+	    	<li><a href="javascript:void(0);">性别</a><i class="filt-arrow"></i><i class="filt-arrow2"></i></li>
+	    	<li><a href="javascript:void(0);">身高</a><i class="filt-arrow"></i><i class="filt-arrow2"></i></li>
+	    	<li><a href="javascript:void(0);">风格</a><i class="filt-arrow"></i></li>
+	    </ul>
+	</header>
+
+    <div class="xiala_out absolute">
+		<div class="select xb dn">
+	    	<ul class="mpageGender">
+	    		<li class="active_select"><a href="javascript:;">不限</a></li>
+	    		<li><a href="javascript:;">男</a></li>
+	    		<li><a href="javascript:;">女</a></li>
+	    	</ul>
+	    </div>
+		<div class="select sg dn">
+	    	<ul class="mpageHeight">
+	    		<li class="active_select"><a href="javascript:;">不限</a></li>
+	    		<li><a href="javascript:;">155+</a></li>
+	    		<li><a href="javascript:;">160+</a></li>
+	    		<li><a href="javascript:;">165+</a></li>
+	    		<li><a href="javascript:;">170+</a></li>
+	    		<li><a href="javascript:;">175+</a></li>
+	    		<li><a href="javascript:;">180+</a></li>
+	    		<li><a href="javascript:;">185+</a></li>
+	    	</ul>
+	    </div>
+		<div class="select fg dn">
+	    	<ul class="mpageStyle">
+	    		<li class="active_select"><a href="javascript:;">不限</a></li>
+	    		<li><a href="javascript:;">外模</a></li>
+	    		<li><a href="javascript:;">欧美</a></li>
+	    		<li><a href="javascript:;">性感</a></li>
+	    		<li><a href="javascript:;">甜美</a></li>
+	    		<li><a href="javascript:;">运动</a></li>
+	    		<li><a href="javascript:;">清纯</a></li>
+	    		<li><a href="javascript:;">日韩</a></li>
+	    		<li><a href="javascript:;">中国风</a></li>
+	    		<li><a href="javascript:;">气质</a></li>
+	    		<li><a href="javascript:;">复古</a></li>
+	    		<li><a href="javascript:;">学院</a></li>
+	    		<li><a href="javascript:;">型男</a></li>
+	    		<li><a href="javascript:;">民族</a></li>
+	    		<li><a href="javascript:;">绅士</a></li>
+	    		<li><a href="javascript:;">潮男</a></li>
+	    		<li><a href="javascript:;">胡须男</a></li>
+	    		<li><a href="javascript:;">大叔范儿</a></li>
+	    		<li><a href="javascript:;">儒雅</a></li>
+	    		<li><a href="javascript:;">酷帅</a></li>
+	    		<li><a href="javascript:;">男神</a></li>
+	    		<li><a href="javascript:;">肌肉男</a></li>
+	    		<li><a href="javascript:;">街头</a></li>
+	    		<li><a href="javascript:;">休闲</a></li>
+	    		<li><a href="javascript:;">淑女</a></li>
+	    		<li><a href="javascript:;">英伦</a></li>
+	    		<li><a href="javascript:;">可爱</a></li>
+	    		<li><a href="javascript:;">OL风</a></li>
+	    	</ul>
+	    </div>
+	</div>
+    <main>
+    	<ul class="imgList fp"> 
+
+	    </ul>
+		<div class="page__bd">
+			<div class="weui-loadmore">
+				<i class="weui-loading"></i>
+				<span class="weui-loadmore__tips">正在加载</span>
+			</div>
+			<div class="weui-loadmore weui-loadmore_line">
+				<span class="weui-loadmore__tips">没有更多了</span>
+			</div>
+		</div>
+
+    </main>
+</body>
+<script src="../lib/zepto.js"></script>
+<script>
+
+	$(".xiala").on("click","li",function(){
+		$(this).addClass('active_select').siblings().removeClass('active_select');
+		$('.select').eq($(this).index()).toggle().siblings().hide();
+	});
+ 	
+ 	// 获取帅选参数
+ 	var sx = "";
+	$(".xiala_out").on("click","li",function(){
+		// 选择后隐藏全部
+ 		$(".select").hide();
+		$(this).addClass('active_select').siblings().removeClass('active_select');
+ 		
+ 		// 获取选中内容，如果是数字就取整
+ 		sx = $(this).find("a").text();
+ 		sx = sx.indexOf("+") != -1 ? parseInt(sx) : sx;
+ 		
+ 		// 把tab标签的内容改为选择的内容
+		$(".xiala li").eq($(this).closest(".select").index()).find("a").text($(this).find("a").text());
+ 		
+ 		// 发送请求，重新获取数据渲染页面
+		ajax(function(res){
+			showList(res);
+		});
+	});
+ 	
+ 	// 懒加载
+ 	$(window).scroll(function(){
+ 		var scrollTop = ($("header").height() + $("main").height()) - ($(window).scrollTop() + $(window).height());
+ 		if(scrollTop < 100){
+ 			ajax(function(res){
+				showList(res);
+			});
+ 		}
+ 	});
+ 	
+ 	// 数据处理函数
+	var page = 0;
+	var qty = 30;
+	function ajax(callback){
+		$(".weui-loadmore").show()
+		page++;
+		$.ajax({
+			url:"http://localhost:55555/list",
+			type:"get",
+			dataType:"json",
+			data:{
+				page:page,
+				qty:qty,
+				sx:sx
+			},
+			success:function(res){
+				console.log(res);
+				callback(res);
+			}
+		});
+	}
+
+	ajax(function(res){
+		showList(res);
+	});
+
+	function showList(res){
+		var imgList = res.list.map(item=>{
+			return `
+				<li><a href="detail.html?id=${item.id}"><img src="${item.img}" alt=""></a></li>
+			`
+		}).join("");
+		$(".weui-loadmore").hide()
+		$(".imgList").append(imgList);
+		if(res.list.length < res.qty){
+			$(".weui-loadmore_line").show();
+			return;
+		};
+	}
+</script>
+</html>
