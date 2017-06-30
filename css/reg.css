@@ -1,0 +1,52 @@
+h1{
+	text-align: center;
+	padding: 35px 0;;
+	padding-top: 50px;
+}
+form div{
+	padding: 0 10px;
+	margin-bottom: 20px;
+}
+form input{
+	border: 1px solid #333;
+	height: 16px;
+	font-size: 16px;
+	width: 89%;
+	padding: 16px 0;
+	padding-left: 11%;
+}
+#reg{
+	height: 50px;
+	background-color: #fe0877;
+	text-align: center;
+	border: 0;
+	width: 100%;
+	margin-top: 20px;
+	padding: 0;
+	color: #fff;
+}
+#login{
+	height: 50px;
+	background-color: #fe0877;
+	text-align: center;
+	border: 0;
+	width: 100%;
+	margin-top: 20px;
+	padding: 0;
+	color: #fff;
+}
+#_login{
+	height: 50px;
+	text-align: center;
+	border: 1px solid #fe0877;
+	width: 100%;
+	padding: 0;
+}
+
+#register{
+	height: 50px;
+	text-align: center;
+	border: 1px solid #fe0877;
+	width: 100%;
+	padding: 0;
+}
