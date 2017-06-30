@@ -1,0 +1,8 @@
+接口：http://localhost:55555/
+
+首页
+模特列表：http://localhost:55555/model   变量：model_img，model_name,model_type,watch
+人才列表：http://localhost:55555/rencai  变量：rencai_img,rencai_name
+
+列表页 
+ 

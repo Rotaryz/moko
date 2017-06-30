@@ -1,0 +1,10 @@
+
+
+/*去掉默认样式*/
+html, body, span, div, p, a, table, tbody, td, h1, h2, h3, h4, h5, h6, img, form, font, strong, b, i, dl, dt, dd, ol, ul, li, dl, dd, dt, iframe, label, blockquote, input, button {padding:0; margin:0;list-style: none;}
+body {font-size:14px; font-family: Arial,"Microsoft YaHei", "微软雅黑";color:#333;background:#fff;-webkit-text-size-adjust:none;}
+img {vertical-align:middle; border:none;}
+a {color:#666;text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
+
+input,button,select,textarea{outline:none}
+textarea{resize:none}
