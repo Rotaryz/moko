@@ -3,6 +3,7 @@
 .project
 package-lock.json
 /doc
+.gitignore
 #过滤压缩包
 *.gz
 *.zip

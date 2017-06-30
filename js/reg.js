@@ -1,33 +1,63 @@
 switch(location.search) {
 	case '?reg':
-		let html = `
+		let htmlreg = `
 			<header>
 			<h1>
 				<img src="../img/moko-logo.png"/>
 			</h1>
-		</header>
-		<form>
-			<div>
-				<input type="text" placeholder="请输入用户名" name="username" id="username">
-			</div>
-			<div>
-				<input type="number" placeholder="请输入手机号" name="phone" id="phone">
-			</div>
-			<div>
-				<input type="password" placeholder="请输入密码" name="password" id="password">
-			</div>
-			<div>
-				<input type="password" placeholder="请再次输入密码" name="password2" id="password2">
-			</div>
-			<div>
-				<input type="button" value="注册" id="reg">
-			</div>
-			<div>
-				<input type="button" value="登录" id="_login">
-			</div>
-		</form>
+			</header>
+			<form>
+				<div>
+					<input type="text" placeholder="请输入用户名" name="username" id="username" class="name">
+				</div>
+				<div>
+					<input type="number" placeholder="请输入手机号" name="phone" id="phone" class="pho">
+				</div>
+				<div>
+					<input type="password" placeholder="请输入密码" name="password" id="password"  class="pwd">
+				</div>
+				<div>
+					<input type="password" placeholder="请再次输入密码" name="password2" id="password2" class="pwd">
+				</div>
+				<div>
+					<input type="button" value="注册" id="reg">
+				</div>
+				<div>
+					<input type="button" value="登录" id="_login">
+				</div>
+			</form>
 		`;
-		$('body').html(html);
+		$('body').html(htmlreg);
+		$('body').css('left','-210px');
+		$('body').animate({left:'0'},500);
+		break;
+	case '':
+		let htmllogin = `
+			<header>
+			<h1>
+				<img src="../img/moko-logo.png"/>
+			</h1>
+			</header>
+			<form>
+				<div>
+					<input type="text" placeholder="请输入用户名或手机号" name="username" id="username" class="name">
+				</div>
+				<div>
+					<input type="password" placeholder="请输入密码" name="password" id="password" class="pwd">
+				</div>
+				<div>
+					<div>
+					<input type="button" value="登录" id="login">
+				</div>
+				<div>
+					<input type="button" value="注册" id="register">
+				</div>
+				</div>
+			</form>
+		`;
+		$('body').html(htmllogin);
+		$('body').css('right','-210px');
+		$('body').animate({right:'0'},500);
 		break;
 }
 
@@ -98,7 +128,8 @@ $('#login').on('click', () => {
 			username: username.val(),
 			password: password.val(),
 		},
-		success: data => {
+		success:data=>{
+				console.log(data);
 			if(data == '0') {
 				alert('用户名或密码错误');
 			}

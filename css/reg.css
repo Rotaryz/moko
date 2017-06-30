@@ -1,3 +1,7 @@
+body{
+	position: absolute;
+	width:100%;
+}
 h1{
 	text-align: center;
 	padding: 35px 0;;
@@ -14,6 +18,7 @@ form input{
 	width: 89%;
 	padding: 16px 0;
 	padding-left: 11%;
+	position: relative;
 }
 #reg{
 	height: 50px;
@@ -50,3 +55,16 @@ form input{
 	width: 100%;
 	padding: 0;
 }
+.name{
+	background: url(../img/reg-username.png) no-repeat 10px center;
+	background-size: 20px;
+}
+.pho{
+	background: url(../img/reg-phone.png) no-repeat 10px center;
+	background-size: 20px;
+}
+.pwd{
+	background: url(../img/reg-password.png) no-repeat 10px center;
+	background-size: 20px;
+}
+
