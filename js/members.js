@@ -29,8 +29,8 @@ app.get('/reg', function(req,res){
 app.get('/login', function(req,res){
 	res.append("Access-Control-Allow-Origin", "*");
 	createConnection();
-	connection.query('SELECT * FROM memberslist where username="'+req.query.username+'" and password="'+req.query.password+'"', function(error, results, fields) {
-	if(results.length == 1){
+	connection.query('SELECT * FROM memberslist where (username = "'+req.query.username+'" or phone = "'+req.query.username+'") and password = "'+req.query.password+'"', function(error, results, fields) {
+	if(results.length != 0){
 		res.send('1');
 	}else if(results.length == 0){
 		res.send('0');
