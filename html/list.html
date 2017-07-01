@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">	
 	<title>MOKO!美空网 MTB美空人才库</title>
-	<link rel="stylesheet" href="../css/list.css">
-	<link rel="stylesheet" href="../css/weui.css" />
-	<script src="../js/swiper.jquery.js"></script>
+	<link rel="stylesheet" href="css/list.css">
+	<link rel="stylesheet" href="css/weui.css" />
+	<script src="js/swiper.jquery.js"></script>
 </head>
 <body>
 	<header>
@@ -75,6 +75,11 @@
     	<ul class="imgList fp"> 
 
 	    </ul>
+		<div class="weui-panel__ft">
+			<a href="javascript:void(0);" class="weui-cell">
+				<div class="weui-cell__bd">查看更多</div>
+			</a>
+		</div>
 		<div class="page__bd">
 			<div class="weui-loadmore">
 				<i class="weui-loading"></i>
@@ -87,7 +92,7 @@
 
     </main>
 </body>
-<script src="../lib/zepto.js"></script>
+<script src="js/zepto.js"></script>
 <script>
 
 	$(".xiala").on("click","li",function(){
@@ -115,21 +120,19 @@
 		});
 	});
  	
- 	// 懒加载
- 	$(window).scroll(function(){
- 		var scrollTop = ($("header").height() + $("main").height()) - ($(window).scrollTop() + $(window).height());
- 		if(scrollTop < 100){
- 			ajax(function(res){
-				showList(res);
-			});
- 		}
- 	});
+ 	// 加载更多
+	$(".weui-cell").on("click",function(){
+			ajax(function(res){
+			showList(res);
+		});
+	})
  	
  	// 数据处理函数
 	var page = 0;
 	var qty = 30;
 	function ajax(callback){
-		$(".weui-loadmore").show()
+		$(".weui-loadmore").show();
+		$(".weui-loadmore_line").hide();
 		page++;
 		$.ajax({
 			url:"http://localhost:55555/list",
@@ -160,6 +163,7 @@
 		$(".weui-loadmore").hide()
 		$(".imgList").append(imgList);
 		if(res.list.length < res.qty){
+			$(".weui-panel__ft").hide();
 			$(".weui-loadmore_line").show();
 			return;
 		};

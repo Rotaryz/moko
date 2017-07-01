@@ -88,5 +88,5 @@ header .prevPage{display:block;width: 8%;height: 50px;position:absolute;left:0;t
 .xiala_out li{text-indent: 15px;height: 40px;line-height: 40px;border-bottom: 1px solid #c9c9c9;}
 .active_select a{color:#ff0066;}
 
-
+.weui-panel__ft{padding-bottom: 15px;text-align: center;}
 .page__bd .weui-loadmore .weui-loadmore__tips{background: none;}

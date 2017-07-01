@@ -61,10 +61,10 @@ app.get('/list',function(req,res){
 app.get('/detail',function(req,res){
 	res.append('Access-Control-Allow-Origin','*');
 	// 查询数据库
-	var tatol = req.query
+	var params = req.query
 	createConnection();
 	connection.connect();
-	require('./route/detail.js').detail(req,res,connection,tatol)
+	require('./route/detail.js').detail(req,res,connection,params)
 });
 // 新用户信息
 app.post('/new',function(req,res){

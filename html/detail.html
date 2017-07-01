@@ -4,81 +4,128 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">	
 	<title>MOKO!美空网 MTB美空人才库</title>
-	<link rel="stylesheet" href="../css/list.css">
+	<link rel="stylesheet" href="css/list.css">
 </head>
 <body>
 	<header class="relative">
 		<a class="prevPage" href="javascript:history.go(-1)"></a>
 		<h1 class="detail">美空人才库</h1>
 	</header>
-	<section class="name fp">
-		<h2><img src="../img/0.jpg" alt=""></h2>
-		<div>
-			<h3>叶梓棠</h3>
-			<p><span>杭州</span><b>|</b><span>新锐模特儿 </span><b>|</b><span>164厘米</span></p>
-		</div>
-	</section>
-	<section class="works">
-		<h2>个人代表作品</h2>
-		<div class="work_img">
-			<img src="../img/0.jpg" alt="">
-			<img src="../img/0.jpg" alt="">
-			<img src="../img/0.jpg" alt="">
-			<img src="../img/0.jpg" alt="">
-			<img src="../img/0.jpg" alt="">
-		</div>
-	</section>
-	<div class="hr"></div>
-	<section class="works">
-		<h2>模特卡资料</h2>
-		<p class="fp">
-			<span>身高：<b>164cm</b></span>
-			<span>身高：<b>164cm</b></span>
-			<span>身高：<b>164cm</b></span>
-		</p>
-		<p class="fp">
-			<span>身高：<b>164cm</b></span>
-			<span>身高：<b>164cm</b></span>
-			<span>身高：<b>164cm</b></span>
-		</p>
-	</section>
-	<div class="hr"></div>
-	<section class="works">
-		<h2>工作标签</h2>
-		<p class="fp">
-			<span class="wauto">平面拍摄:&nbsp;&nbsp;</span>
-			<i>时装拍摄</i>
-		</p>
-	</section>
-	<div class="hr"></div>
-	<section class="works">
-		<h2>工作风格</h2>
-		<p>
-			<span class="wauto">风格标签:&nbsp;&nbsp;</span>
-			<i>日韩 | </i>
-			<i>气质 | </i>
-			<i>清纯 | </i>
-		</p>
-		<p>
-			<span class="wauto">外貌标签:&nbsp;&nbsp;</span>
-		</p>
-		<p>
-			<span class="wauto">体型标签:&nbsp;&nbsp;</span>
-			<i>苗条 | </i>
-		</p>
-		<p>
-			<span class="wauto">魅力标签:&nbsp;&nbsp;</span>
-			<i>嘴唇 | </i>
-		</p>
-	</section>
-	<div class="hr"></div>
-	<section class="works">
-		<h2>工作经验</h2>
-		<p class="wrap">
-			01年—04年 杭州市艺术学院 现代舞编导专业 05年—08年 浙江省艺术学院 影视表演专业
-		</p>
-	</section>
-	<div class="hr hrb"></div>
-	<footer><a href="server.html" class="tonggao">工作预约</a></footer>
+	<main>
+		
+	</main>
+	<footer><a href="tonggao.html" class="tonggao">工作预约</a></footer>
 </body>
+<script src="js/zepto.js"></script>
+<script>
+	function GetQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+ 	function ajax(callback){
+		$.ajax({
+			url:"http://localhost:55555/detail",
+			type:"GET",
+			data:{
+	 			id:GetQueryString("id"),
+			},
+			dataType:"json",
+			success:function(res){
+				callback(res);
+			}
+		})
+
+ 	}
+ 	ajax(function(res){
+ 		showDetail(res);
+ 	});
+
+ 	function showDetail(res){
+ 		console.log(res);
+ 		var item = res.detail[0];
+ 		var html = `
+			<section class="name fp">
+				<h2><img src="${item.img}" alt=""></h2>
+				<div>
+					<h3>${item.name!=null ? item.name : "呵呵"}</h3>
+					<p>
+						<span>${item.place!=null ? item.place : "嘿嘿"}</span>
+						<b>|</b>
+						<span>${item.voc!=null ? item.voc : "哈哈"} </span>
+						<b>|</b>
+						<span>${item.high!=null ? parseInt(item.high) : "00"}厘米</span>
+					</p>
+				</div>
+			</section>
+			<section class="works">
+				<h2>个人代表作品</h2>
+				<div class="work_img">
+
+				</div>
+			</section>
+			<div class="hr"></div>
+			<section class="works">
+				<h2>模特卡资料</h2>
+				<p class="fp">
+					<span>身高：<b>${item.high!=null ? item.high : ""}</b></span>
+					<span>体重：<b>${item.wigh!=null ? item.wigh : ""}</b></span>
+					<span>胸围：<b>${item.chest!=null ? item.chest : ""}</b></span>
+				</p>
+				<p class="fp">
+					<span>腰围：<b>${item.wai!=null ? item.wai : ""}</b></span>
+					<span>臀围：<b>${item.hip!=null ? item.hip : ""}</b></span>
+					<span>鞋码：<b>${item.size!=null ? item.size : ""}</b></span>
+				</p>
+			</section>
+			<div class="hr"></div>
+			<section class="works">
+				<h2>工作标签</h2>
+				<p class="fp">
+					<span class="wauto">${item.title!=null ? item.title : ""}</span>
+				</p>
+			</section>
+			<div class="hr"></div>
+			<section class="works">
+				<h2>工作风格</h2>
+				<p>
+					<span class="wauto">风格标签:&nbsp;&nbsp;</span>
+					<i>${item.tag_fg!=null ? item.tag_fg : ""}</i>
+				</p>
+				<p>
+					<span class="wauto">外貌标签:&nbsp;&nbsp;</span>
+					<i>${item.tag_wm!=null ? item.tag_wm : ""}</i>
+				</p>
+				<p>
+					<span class="wauto">体型标签:&nbsp;&nbsp;</span>
+					<i>${item.tag_tx!=null ? item.tag_tx : ""}</i>
+				</p>
+				<p>
+					<span class="wauto">魅力标签:&nbsp;&nbsp;</span>
+					<i>${item.tag_ml!=null ? item.tag_ml : ""}</i>
+				</p>
+			</section>
+			<div class="hr"></div>
+			<section class="works">
+				<h2>工作经验</h2>
+				<p class="wrap">
+					${item.time!=null ? item.time : ""}
+				</p>
+			</section>
+			<div class="hr hrb"></div>
+ 		`;
+ 		$("main").append(html);
+ 		
+ 		if(item.pic){
+	 		$(".work_img").append(JSON.parse(item.pic).map(item=>{
+	 			return `<img src=${item} alt="">`;
+	 		}).join(""));
+
+ 		}else{
+ 			$(".work_img").append(`<img src=${item.img} alt="">`);
+ 		}
+
+ 	}
+</script>
 </html>

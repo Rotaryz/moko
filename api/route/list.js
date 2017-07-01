@@ -4,7 +4,7 @@ function model_list(req,res,connection,params){
 	var page = qty*(params.page - 1);
 
 	//执行数据库语言
-	connection.query(`select img from mo_list limit ${page} , ${qty}`,function(error,results,fields){
+	connection.query(`select * from mo_list limit ${page} , ${qty}`,function(error,results,fields){
 		if (error) {throw error};
 
 		var obj = {
