@@ -2,23 +2,34 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="../css/server.css">
+	<script src="../lib/jquery-3.2.1.js"></script>
+	<script src="../js/server.js"></script>
 </head>
 <body>
-	<h2></h2>
+	<h2>补充个人信息</h2>
 	<form id="form">
-	<div class="head">
-	</div>
-	<input type="file" name="head" id="headimg">
-	<p><span>工作时间</span><input type="text" name="moko_time"></p>
-	<p><span>工作地点</span><input type="text" name="moko_site"></p>
-	<p><span>模特要求</span><textarea name="moko_ask"></textarea></p>
-	<p><span>工作内容</span><textarea name="moko_content"></textarea></p>
-	<p><span class="s1">预</span><b></b><span class="s2">算</span><input type="text" name="moko_budget"></p>
-	<p><span class="s1">联</span><b class="b1"></b><span class="s3">系</span><b class="b1"></b><span class="s2">人</span><input type="text" name="moko_name"></p>
-	<p class="mar"><span>手机号码</span><input id="cellphone" type="text" name="moko_phone"></p>
+		<div class="head">
+			<img class="head01">
+		</div>
+		<input type="file" name="head" id="headimg">
 	</form>
+	
+	<p><span>姓名/name</span><input type="text" name="moko_site" class="name"></p>
+
+	<p><span>职位</span><input type="text" name="moko_site" class="voc"></p>
+	<p><span>工作地点</span><input type="text" name="moko_time" class="place"></p>
+	<p><span>身高/high</span><input type="text" name="moko_site" class="high"></p>
+	<p><span>体重/wigh</span><input type="text" name="moko_site" class="wigh"></p>
+	<p><span>胸围/chest</span><input type="text" name="moko_site" class="chest"></p>
+	<p><span>臀围/hip</span><input type="text" name="moko_site" class="hip"></p>
+	<p><span>腰围/waistline</span><input type="text" name="moko_site" class="wai"></p>
+	<p><span>鞋子码数</span><input type="text" name="moko_site " class="size"></p>
+	<p><span>工作风格</span><textarea name="moko_ask" class="style"></textarea></p>
+	<p><span>工作标签</span><textarea name="moko_content" class="title"></textarea></p>
+	<p><span>工作经验</span><textarea name="moko_content" class="time"></textarea></p>
 	<input type="button" class="sub" value="提交">
 
 </body>
