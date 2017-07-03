@@ -1,0 +1,68 @@
+*{
+	font: 14px/1.5 Helvetica,Tahoma,sans-serif;
+}
+body{
+	background-color: rgb(245,245,245);
+}
+#pg-hd{
+	width: 100%;
+	background-color: #fe0877;
+	height: 43px;
+}
+.user{
+	padding:16px;
+	background-color: #fe0877;
+	overflow: hidden;
+}
+.user span{
+	display:block;
+	float: left;
+}
+.user-pic{
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	background: url(../1.jpg) no-repeat;
+	margin-right: 16px;
+}
+.user-name{
+	height: 45px;
+	color: #fff;
+	line-height: 45px;
+}
+.panel{
+	overflow: hidden;
+	background-color: #fff;
+	margin-top: 8px;
+}
+.panel h2{
+	height: 40px;
+	line-height: 40px;
+	padding-left: 16px;
+	font-size: 16px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.panel ul{
+	border-collapse: collapse;
+}
+.panel ul li{
+	width: 33%;
+	height: 80px;
+	display: block;
+	float: left;
+	text-align: center;
+	border-right: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+.panel li:nth-child(3n){
+    border-right: 0;
+}
+.panel li:nth-child(1),.panel li:nth-child(2),.panel li:nth-child(3){
+   border-bottom: 1px solid #e0e0e0;
+}
+.panel ul li>a{
+	display: inline-block;
+    margin-top: 17px;
+    color: #666;
+}
+

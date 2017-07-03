@@ -1,0 +1,10 @@
+body{
+	position: absolute;
+	width:100%;
+	font-family: "微软雅黑";
+}
+h1{
+	text-align: center;
+	padding: 35px 0;;
+	padding-top: 50px;
+}
