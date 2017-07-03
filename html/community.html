@@ -6,16 +6,44 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title></title>
 		<link rel="stylesheet" href="../node_modules/weui/dist/style/weui.css">
+		<style type="text/css">
+			#pg-hd {
+				width: 100%;
+				background-color: #fe0877;
+				height: 43px;
+			}
+			#pg-hd img{
+				height: 26px;
+				margin: 8px 0 8px 8px;
+			}
+			.set {
+				float: right;
+				width: 50px;
+				height: 26px;
+				background-color: #fff;
+				color: #fe0877;
+				margin: 8px 8px 0 0;
+				text-align: center;
+				border-radius: 5px;
+			}
+			
+		</style>
 	</head>
 
 	<body ng-app="mokoApp">
+		<div id="pg-hd"  ng-controller="headerCtrl">
+			<span>
+				<img src={{img}}/>
+			</span>
+			<span class="set">发送</span>
+		</div>
 		<div class="weui-cell" ng-controller="textareaCtrl">
 			<div class="weui-cell__bd">
 				<textarea class="weui-textarea" ng-keydown="show()" placeholder="请输入文本" rows="8" maxlength="200"></textarea>
 				<div class="weui-textarea-counter"><span ng-bind="msg">0</span>/200</div>
 			</div>
 		</div>
-		<div class="weui-cell"  ng-controller="picCtrl">
+		<div class="weui-cell" ng-controller="picCtrl">
 			<div class="weui-cell__bd">
 				<div class="weui-uploader">
 					<div class="weui-uploader__hd">
@@ -36,15 +64,18 @@
 	<script src="../lib/angular.js"></script>
 	<script src="../lib/jquery-3.2.1.js"></script>
 	<script>
-		let app = angular.module('mokoApp',[]);
-		app.controller("textareaCtrl", function($scope){
-				$scope.msg = 0;
-			$scope.show = ()=>{
-				$scope.msg = $('.weui-textarea').val().length+1;
+		let app = angular.module('mokoApp', []);
+		app.controller("headerCtrl", function($scope) {
+			$scope.img = '../img/community-return.png';
+		});
+		app.controller("textareaCtrl", function($scope) {
+			$scope.msg = 0;
+			$scope.show = () => {
+				$scope.msg = $('.weui-textarea').val().length + 1;
 			}
 		});
-		app.controller("picCtrl", function($scope){
-			$scope.show = ()=>{
+		app.controller("picCtrl", function($scope) {
+			$scope.show = () => {
 				$.ajax({
 					url: '',
 					type: '',
@@ -52,8 +83,8 @@
 					data: new FormData($('#uploadForm')[0]),
 					processData: false,
 					contentType: false,
-					success: data=>{
-						
+					success: data => {
+
 					}
 				})
 			}
