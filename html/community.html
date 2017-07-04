@@ -12,10 +12,12 @@
 				background-color: #fe0877;
 				height: 43px;
 			}
-			#pg-hd img{
+			
+			#pg-hd img {
 				height: 26px;
 				margin: 8px 0 8px 8px;
 			}
+			
 			.set {
 				float: right;
 				width: 50px;
@@ -26,16 +28,15 @@
 				text-align: center;
 				border-radius: 5px;
 			}
-			
 		</style>
 	</head>
 
 	<body ng-app="mokoApp">
-		<div id="pg-hd"  ng-controller="headerCtrl">
+		<div id="pg-hd" ng-controller="headerCtrl">
 			<span>
 				<img src={{img}}/>
 			</span>
-			<span class="set">发送</span>
+			<span id="send" ng-click="show()">发送</span>
 		</div>
 		<div class="weui-cell" ng-controller="textareaCtrl">
 			<div class="weui-cell__bd">
@@ -54,7 +55,7 @@
 						<ul class="weui-uploader__files" id="uploaderFiles">
 						</ul>
 						<form class="weui-uploader__input-box" id="uploadForm">
-							<input id="uploaderInput" class="weui-uploader__input" type="file" ng-click="show()" name="pic">
+							<input id="uploaderInput" class="weui-uploader__input" type="file" name="pic">
 						</form>
 					</div>
 				</div>
@@ -67,26 +68,22 @@
 		let app = angular.module('mokoApp', []);
 		app.controller("headerCtrl", function($scope) {
 			$scope.img = '../img/community-return.png';
+			$.ajax({
+				url: '',
+				type: '',
+				cache: false,
+				data: new FormData($('#uploadForm')[0]),
+				processData: false,
+				contentType: false,
+				success: data => {
+
+				}
+			})
 		});
 		app.controller("textareaCtrl", function($scope) {
 			$scope.msg = 0;
 			$scope.show = () => {
 				$scope.msg = $('.weui-textarea').val().length + 1;
-			}
-		});
-		app.controller("picCtrl", function($scope) {
-			$scope.show = () => {
-				$.ajax({
-					url: '',
-					type: '',
-					cache: false,
-					data: new FormData($('#uploadForm')[0]),
-					processData: false,
-					contentType: false,
-					success: data => {
-
-					}
-				})
 			}
 		});
 	</script>
