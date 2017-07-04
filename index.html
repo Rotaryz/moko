@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/weui.css">
+	<link rel="stylesheet" href="css/swiper.css" />
+	<script src="lib/jquery-3.2.1.js"></script>
+	<script src="lib/swiper.js"></script>
+</head>
+<body>
+<!-- 左边菜单 -->
+<!-- <div id="menu">
+	<div class="search_wrap">
+		<i class="menu_rtn menu_open"></i>
+        <i class="rtn_left menu_open"></i>
+	</div> -->
+   <!--  <div class="menu_scroll" style="height: 519px;">
+    	<div class="menu_tit menu_jx"><a href="http://www.moko.cc/moko/post/1.html">精选</a></div>
+        <div class="jx_list">
+            <a href="http://www.moko.cc/channels/post/28/1.html">摄影</a>
+            <a href="http://www.moko.cc/channels/post/23/1.html">模特儿</a>
+            <a href="http://www.moko.cc/channels/post/151/1.html">化妆造型</a>
+            <a href="http://www.moko.cc/channels/post/41/1.html">设计插画</a>
+            <a href="http://www.moko.cc/channels/post/71/1.html">艺术</a>
+            <a href="http://www.moko.cc/channels/post/53/1.html">广告传媒</a>
+            <a href="http://www.moko.cc/channels/post/150/1.html">演艺</a>
+            <a href="http://www.moko.cc/channels/post/148/1.html">游戏动漫</a>
+        </div>
+        <div class="menu_tit menu_jj"><a href="http://www.moko.cc/focus.html">聚娇</a></div>
+        <div class="jj_list">
+            <a href="http://www.moko.cc/focus/2/list.html">美空播报</a>
+            <a href="http://www.moko.cc/focus/7/list.html">美女视界</a>
+            <a href="http://www.moko.cc/focus/3/list.html">美女正能量</a>
+            <a href="http://www.moko.cc/focus/4/list.html">美女私生活</a>
+            <a href="http://www.moko.cc/focus/5/list.html">美女恋物</a>
+        </div>
+        <div class="menu_tit menu_rck"><a href="http://www.moko.cc/mtb.html">人才库</a></div>
+        <div class="rck_list">
+            <a href="http://www.moko.cc/mtbModel|searchItem.action?index_type=6">外籍模特</a>
+            <a href="http://www.moko.cc/mtbModel|searchItem.action?index_type=1">样片麻豆</a>
+            <a href="http://www.moko.cc/mtbModel|searchItem.action?index_type=2">商拍模特</a>
+            <a href="http://www.moko.cc/mtbModel|searchItem.action?index_type=3">会展美女</a>
+            <a href="http://www.moko.cc/mtbModel|searchItem.action?index_type=4">影视艺人</a>
+            <a href="http://www.moko.cc/mtbModel|searchItem.action?index_type=5">网络红人</a>
+            <a href="http://www.moko.cc/mtbModel|searchItem.action?index_type=7">时尚型男</a>
+        </div>
+        <div class="menu_tit menu_tg">通告</div>
+        <div class="tg_list">
+            <a href="http://www.moko.cc/jobList|allJobBySearch.action">平面拍摄</a>
+            <a href="http://www.moko.cc/jobList|allJobBySearch.action">影视表演</a>
+            <a href="http://www.moko.cc/jobList|allJobBySearch.action">会展活动</a>
+        </div>
+        <div class="menu_tit menu_mgc">梦工场</div>
+        <div class="mgc_list">
+            <a href="http://www.moko.cc/shootplan.action">新星初长成</a>
+            <a href="http://www.moko.cc/mokoevent/post/1.html">美空事件</a>
+            <a href="http://www.moko.cc/mspTopic|showNewMspPost.action">MSP明星拍摄计划</a>
+            <a href="http://www.moko.cc/ppswelcome.html">私房拍摄</a>
+            <a href="http://www.moko.cc/dazhizuo">美空大制作</a>
+            <a href="http://www.moko.cc/mtg/index.html">MTG超级美女榜</a>
+        </div>
+    </div>
+</div> -->
+  <!-- 顶部 -->
+  <div class="box">
+	<header  id="header">
+	<div class="head">
+		<div class="menu_open rtn_home"></div>
+		<div class="h_logo">
+			<!-- <img src="img/logo1.png" alt=""> -->
+		</div>
+		<div class="user_open">	
+			<a href="html/reg.html">
+				<img src="http://static1qn.moko.cc/static/msite/images/user.png" alt="点击登录">
+			</a>    
+		</div>
+	</div>
+	</header>	
+<!-- 内容 -->
+ <div id="container" class="container">
+	<div class="wrap_top white_bg">
+	
+		<!-- 轮播广告 -->
+        <!-- <div class="box_swipe" id="banner"> -->
+        <div class="swiper-container box_swipe">
+               <ul class="swiper-wrapper">
+					    <li class="swiper-slide"> 
+					          <a href="#">
+						              <img src="img/a1.jpg" alt="八面“莹”澈 炎夏的套路">
+						      </a>
+						</li>
+					    <li class="swiper-slide"> 
+						      <a href="#">
+									  <img src="img/a2.jpg" alt="八面“莹”澈 炎夏的套路">
+							  </a>
+					    </li>
+                        <li class="swiper-slide"> 
+						      <a href="#">
+									  <img src="img/a3.jpg" alt="八面“莹”澈 炎夏的套路">
+							  </a>
+					    </li>
+					     <li class="swiper-slide"> 
+						      <a href="#">
+									  <img src="img/a4.jpg" alt="八面“莹”澈 炎夏的套路">
+							  </a>
+					    </li>
+					     <li class="swiper-slide"> 
+						      <a href="#">
+									  <img src="img/a5.jpg" alt="八面“莹”澈 炎夏的套路">
+							  </a>
+					    </li>
+					     <li class="swiper-slide"> 
+						      <a href="#">
+									  <img src="img/a6.jpg" alt="八面“莹”澈 炎夏的套路">
+							  </a>
+					    </li>
+					     <li class="swiper-slide"> 
+						      <a href="#">
+									  <img src="img/a7.jpg" alt="八面“莹”澈 炎夏的套路">
+							  </a>
+					    </li>
+					     <li class="swiper-slide"> 
+						      <a href="#">
+									  <img src="img/a8.jpg" alt="八面“莹”澈 炎夏的套路">
+							  </a>
+					    </li>
+		     </ul>
+		  </div>
+	</div> 
+    <!-- </div> -->
+
+        <ul class="nav_list">
+            <li><a class="current" href="javascript:;">精选</a></li>
+            <li><a href="">人才库</a></li>
+            <li><a href="javascript:;">梦工场</a></li>
+        </ul>
+        <div class="vocation_type">
+            <div class="type1">
+                <a class="sy" href="http://www.moko.cc/channels/post/28/1.html">摄影</a>
+                <a class="mte" href="http://www.moko.cc/channels/post/23/1.html">模特儿</a>
+                <a class="hzzx" href="http://www.moko.cc/channels/post/151/1.html">化妆师</a>
+                <a class="sjch" href="http://www.moko.cc/channels/post/41/1.html">设计插画</a>
+                <a class="type_btn" href="javascript:;"><i></i></a>
+            </div>
+            <div class="type2">
+                <a class="ys" href="http://www.moko.cc/channels/post/71/1.html">艺术</a>
+                <a class="ggcm" href="http://www.moko.cc/channels/post/53/1.html">广告传媒</a>
+                <a class="yy" href="http://www.moko.cc/channels/post/150/1.html">演艺</a>
+                <a class="yxdm" href="http://www.moko.cc/channels/post/148/1.html">游戏动漫</a>
+                <a class="qt" href="http://www.moko.cc/channels/post/94/1.html">其它</a>
+            </div>
+        </div>
+    <!-- </div> -->
+    
+    <!-- 展示 -->
+    <div class="works_exh fixclear">    
+    	
+	       <!--  <div class="item">
+	        	<a href="http://www.moko.cc/post/1248303.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-23/8c707726-6737-433d-b6c2-e4aeb5a4e9bb.jpg" alt="签约模特苗苗">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/ddb87521a3b649adb0651b451650f652">北京平面模特...</a></h3>
+                    <div class="exh_name">
+	                    <em>平面模特儿</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>6128</i>
+                    </div>
+                </section>
+	        </div> -->
+	        
+    	
+	<!--         <div class="item">
+	        	<a href="http://www.moko.cc/post/1245916.html">
+	            	<img src="http://img.mb.moko.cc/2017-06-13/aeb0c5d5-4000-4bfa-b93b-a2189952f930.jpg" alt="西瓜地麦田">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/5470265514a942df9aa4bc7ba8d071f5">Abby啊</a></h3>
+                    <div class="exh_name">
+	                    <em>平面模特儿</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>28659</i>
+                    </div>
+                </section>
+	        </div>
+	        
+    	
+	        <div class="item">
+	        	<a href="http://www.moko.cc/post/1246767.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-21/3e91d7ca-c5a8-4e47-8f0c-b19ff700b88b.jpg" alt="自由、年轻">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/tang168">摄影师汤度野</a></h3>
+                    <div class="exh_name">
+	                    <em>时装摄影</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>15758</i>
+                    </div>
+                </section>
+	        </div>
+	        <div class="fixclear"></div>
+    	
+	        <div class="item">
+	        	<a href="http://www.moko.cc/post/1246772.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-17/8bb4a692-2202-4888-853f-2dddac7c2e08.jpg" alt="时装片 运动·轨迹">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/lianzifantuan">摄影师卢永强</a></h3>
+                    <div class="exh_name">
+	                    <em>时装摄影</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>16032</i>
+                    </div>
+                </section>
+	        </div>
+	        
+    	
+	        <div class="item">
+	        	<a href="http://www.moko.cc/post/1246888.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-21/fdbb7f02-6934-4d59-b1a2-69cbc9e38220.jpg" alt="野">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/275368010">丽丽Lee</a></h3>
+                    <div class="exh_name">
+	                    <em>平面模特儿</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>19488</i>
+                    </div>
+                </section>
+	        </div>
+	        
+    	
+	        <div class="item">
+	        	<a href="http://www.moko.cc/post/1246970.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-21/38c46dc9-1952-4ae4-a728-95ee8def3ca5.jpg" alt="服装画册">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/derek6dong">Derek6...</a></h3>
+                    <div class="exh_name">
+	                    <em>其他职业</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>13608</i>
+                    </div>
+                </section>
+	        </div>
+	        <div class="fixclear"></div>
+    	
+	        <div class="item">
+	        	<a href="http://www.moko.cc/post/1247008.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-21/27485d93-2a72-4dc7-841e-1f863535fa04.jpg" alt="DDAT">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/hanximing">E-WORK...</a></h3>
+                    <div class="exh_name">
+	                    <em>图片后期</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>13587</i>
+                    </div>
+                </section>
+	        </div>
+	        
+    	
+	        <div class="item">
+	        	<a href="http://www.moko.cc/post/1247259.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-19/1e223ae7-ba24-4041-998b-eb362607ed68.jpg" alt="play game">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/tang168">摄影师汤度野</a></h3>
+                    <div class="exh_name">
+	                    <em>时装摄影</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>16496</i>
+                    </div>
+                </section>
+	        </div>
+	        
+    	
+	        <div class="item">
+	        	<a href="http://www.moko.cc/post/1247438.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-20/771d96db-536f-4509-82aa-13de51259f44.jpg" alt="禅与时尚">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/heyangpher">何书荣</a></h3>
+                    <div class="exh_name">
+	                    <em>时装摄影</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>20868</i>
+                    </div>
+                </section>
+	        </div>
+	        <div class="fixclear"></div>
+    	
+	        <div class="item">
+	        	<a href="http://www.moko.cc/post/1247465.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-20/bf74d97e-6eac-4653-9ec7-d61cb63eadd7.jpg" alt="《伊周》">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/3c3ab87600de4bf7a8ec71c457514932">婷婷Sun</a></h3>
+                    <div class="exh_name">
+	                    <em>图片后期</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>12544</i>
+                    </div>
+                </section>
+	        </div>
+	        
+    	
+	        <div class="item">
+	        	<a href="http://www.moko.cc/post/1247573.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-21/3b19bf2b-94d4-4ecb-ab41-486e0b3d0d57.jpg" alt="造型">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/dingding1218">丁o丁</a></h3>
+                    <div class="exh_name">
+	                    <em>图片后期</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>11997</i>
+                    </div>
+                </section>
+	        </div>
+	        
+    	
+	        <div class="item">
+	        	<a href="http://www.moko.cc/post/1247603.html">
+	            	<img src="http://img1qn.moko.cc/2017-06-21/30b4b7c6-efe5-4959-b0ea-9f3abaaa1505.jpg" alt="The  flame represents  life.">
+	            </a>
+                <section>
+                    <h3><a href="http://www.moko.cc/ruixukui">向日葵Arq...</a></h3>
+                    <div class="exh_name">
+	                    <em>广告摄影</em>
+	                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+	                    <i>9585</i>
+                    </div>
+                </section>
+	        </div>
+	        <div class="fixclear"></div> -->
+    	
+    </div><!-- works_exh -->
+    
+    <!-- 聚娇 -->
+    <div class="tit tit_jj"><i></i>聚娇<a href="http://www.moko.cc/focus.html">更多</a></div>
+    <div class="jj">
+    	<a href="http://www.moko.cc/focus/1012/info.html">
+        	<img src="http://img1qn.moko.cc/2017-06-28/1f7710bf-0db6-47c7-b5ca-8669a2fac646.jpg" alt="施公子的温柔孕妇装——美空通告商拍案例">
+        </a>
+        <p>施公子的温柔孕妇装——美空通告商拍案例</p>
+    </div>
+    
+    <!-- 人才库 -->
+    <div class="tit tit_rck"><i></i>人才库<a href="html/list.html">更多</a></div>
+    <div class="tck">
+        <ul class="fixclear fix">
+        	
+	           <!--  <li>
+	            	<a href="http://www.moko.cc/mtb/model/1352327/space.html">
+	                	<img src="http://img.mb.moko.cc/2017-06-07/96cf0f85-51d6-406f-9183-2dd30393642b.jpg" alt="">
+	                </a>
+	                <p>/郑珉宇</p>
+	            </li> -->
+	            
+        	
+	           <!--  <li>
+	            	<a href="http://www.moko.cc/mtb/model/3363499/space.html">
+	                	<img src="http://img1qn.moko.cc/2017-06-19/8c50f84a-2c0d-4ade-b677-3ba2dda61288.jpg" alt="">
+	                </a>
+	                <p>/男模高铭</p>
+	            </li> -->
+	            <div class="fixclear"></div>
+        	
+	            <!-- <li>
+	            	<a href="http://www.moko.cc/mtb/model/3289223/space.html">
+	                	<img src="http://img1qn.moko.cc/2017-06-28/b996fdfe-1a80-4698-a7b0-c4e8e1bd9a81.jpg" alt="">
+	                </a>
+	                <p>黑马秀/馨菲Iris</p>
+	            </li>
+	             -->
+        	
+	            <!-- <li>
+	            	<a href="http://www.moko.cc/mtb/model/3355230/space.html">
+	                	<img src="http://img1qn.moko.cc/2017-06-27/e08b206c-67a4-41ff-800d-315a5f5d3f66.jpg" alt="">
+	                </a>
+	                <p>/模特小阿庆</p>
+	            </li> -->
+	            <div class="fixclear"></div>
+        	
+        </ul>
+    </div>
+    <!-- <div class="tit tit_mktg"><i></i>美空通告<a href="http://www.moko.cc/job/list.html">更多</a></div> -->
+    <!-- <div class="mktg white_bg">
+        <ul class="fixclear">
+        	
+	            <li><a href="http://www.moko.cc/job/7192/info.html">哑铃训练视频示范</a></li>
+        	
+	            <li><a href="http://www.moko.cc/job/7190/info.html">兰州拍摄水上乐园宣传片需要男女各三</a></li>
+        	
+	            <li><a href="http://www.moko.cc/job/7188/info.html">拍摄瑜伽服外模</a></li>
+        	
+	            <li><a href="http://www.moko.cc/job/7189/info.html">找家居服拍摄中国女模</a></li>
+        	
+	            <li><a href="http://www.moko.cc/job/7183/info.html">温州招募平面长期合作</a></li>
+        	
+        </ul>
+    </div> -->
+    <!-- <div class="tit tit_hymx"><i></i>行业明星<a href="http://www.moko.cc/mtb.html">更多</a></div>
+    <div class="list4 hymx white_bg">
+        <ul>
+        	
+	            <li>
+	                <a href="http://www.moko.cc/cgp1"><img src="http://img1qn.moko.cc/2017-04-14/44722643-63fa-45b8-90f4-a1b94be3bdeb.jpg" alt=""></a>
+	                <p>上海CGP国际摄影培训中心</p>
+	            </li>
+        	
+	            <li>
+	                <a href="http://www.moko.cc/zuphoto"><img src="http://img1qn.moko.cc/2017-05-15/bf931abb-823b-4e20-bb32-c62a6d6b8c1b.jpg" alt=""></a>
+	                <p>曹国平老师</p>
+	            </li>
+        	
+	            <li>
+	                <a href="http://www.moko.cc/f26cn"><img src="http://img1qn.moko.cc/2017-01-13/4c2e5058-1e87-4081-90fa-d23c938f290d.jpg" alt=""></a>
+	                <p>吴锋摄影师</p>
+	            </li>
+        	
+	            <li>
+	                <a href="http://www.moko.cc/LSYvisoin"><img src="http://img1qn.moko.cc/2017-05-17/4aa04caf-528c-474a-90bf-91633c463152.jpg" alt=""></a>
+	                <p>LSY影像</p>
+	            </li>
+        	
+        </ul>
+    </div> -->
+    <!-- <div class="tit tit_jgtj"><i></i>机构推荐<a href="http://www.moko.cc/catalog/index.html">更多</a></div> -->
+  <!--   <div class="list4 jgtj white_bg">
+        <ul>
+        	
+	            <li>
+	                <a href="http://www.moko.cc/mokotonggao"><img src="http://img.mb.moko.cc/2015-06-23/ed4d5842-d55b-4000-807c-3035d1d3ea06.jpg" alt=""></a>
+	                <a href="http://www.moko.cc/mokotonggao"><p>&gt; 美空通告</p></a>
+	                <p><i class="magenta">MP</i>时装模特儿</p>
+	            </li>
+        	
+	            <li>
+	                <a href="http://www.moko.cc/cgp1"><img src="http://img1qn.moko.cc/2017-04-14/44722643-63fa-45b8-90f4-a1b94be3bdeb.jpg" alt=""></a>
+	                <a href="http://www.moko.cc/cgp1"><p>&gt; 上海CGP国际摄影培训中心</p></a>
+	                <p><i class="magenta">MP</i>图片后期</p>
+	            </li>
+        	
+	            <li>
+	                <a href="http://www.moko.cc/psliuwei"><img src="http://img1qn.moko.cc/2017-02-07/25fef326-e4a4-4876-9574-78d31a912c89.jpg" alt=""></a>
+	                <a href="http://www.moko.cc/psliuwei"><p>&gt; 刘伟商业人像修图培训</p></a>
+	                <p><i class="magenta">MVP</i>人像摄影</p>
+	            </li>
+        	
+	            <li>
+	                <a href="http://www.moko.cc/HL270419"><img src="http://img1qn.moko.cc/2017-01-12/6b323868-bf93-460f-a90d-8218ce166556.jpg" alt=""></a>
+	                <a href="http://www.moko.cc/HL270419"><p>&gt; 贺炼修图培训工作室</p></a>
+	                <p><i class="magenta">VIP</i>图片后期</p>
+	            </li>
+        	
+        </ul>
+    </div> -->
+    
+
+		<!-- <div class="edition white_bg">
+        <ul>
+            <li><a><img src="http://static1qn.moko.cc/static/msite/images/client.png" alt=""></a></li>
+            <li><a><img src="http://static1qn.moko.cc/static/msite/images/mobile.png" alt=""></a></li>
+            <li><a onclick="$.cookie('MOKO_REDIRECT_WWW', '1',{domain:'.moko.cc'}); location.href='http://www.moko.cc'">
+            	<img src="http://static1qn.moko.cc/static/msite/images/pc.png" alt=""></a></li>
+        </ul>
+    </div> -->
+    <!-- 底部导航 -->
+    <div class="weui-tabbar" style="position: fixed;">
+		<a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+			<span style="display: inline-block;position: relative;">
+                    <img src="images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                    <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
+			</span>
+			<p class="weui-tabbar__label">模特</p>
+		</a>
+		<a href="javascript:;" class="weui-tabbar__item">
+			<span style="display: inline-block;position: relative;">
+                    <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                    <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+			</span>
+			<p class="weui-tabbar__label">圈子</p>
+		</a>
+		<a href="javascript:;" class="weui-tabbar__item mine">
+			<span style="display: inline-block;position: relative;">
+                    <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                    <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+			</span>
+			<p class="weui-tabbar__label">我的</p>
+		</a>
+		</a>
+	</div>
+    <footer>Copyright©2012-2015 美空moko.cc 版权所有</footer>
+    <div class="empty" style="height: 4.875rem;"></div>
+    
+	<div class="push_msk"></div>
+</div>
+</div>
+</body>
+<script> 
+	// 跳转
+	$('.weui-tabbar').on('click','.mine',function(){
+		console.log(this)
+		location.href='html/users.html'
+	})
+			var mySwiper = new Swiper('.swiper-container', {
+				autoplay: 5000,//可选选项，自动滑动
+			});
+
+			var res =false;
+			$('.type_btn').on('click',function(){
+				if(res === false){
+					$('.type2').css('display','none');
+				    $(this).find('i').attr({'style':'background: url(img/up.png) no-repeat 100%/100%;'});
+				    res=true;
+			   }else if(res === true){
+				  $('.type2').css('display','block');
+				  $(this).find('i').attr({'style':'background: url(img/down.png) no-repeat 100%/100%;'});
+				    res=false;
+				}
+			})
+
+			$.ajax({
+				type:'get',
+				url:'http://localhost:55555/model',
+				data:{
+
+				},
+				async: true,
+				dataType: "json",
+				success:function(data){
+					console.log(data)
+					let html = data.model.map(item=>{
+						return ` <div class="item">
+				        	<a href="http://www.moko.cc/post/1248303.html">
+				            	<img src="${item.model_img}" alt="签约模特苗苗">
+				            </a>
+			                <section>
+			                   <h3><a href="http://www.moko.cc/ddb87521a3b649adb0651b451650f652">${item.model_type}</a></h3>
+			                    <div class="exh_name">
+				                    <em>${item.model_name}</em>
+				                    <span><img src="http://static1qn.moko.cc/static/msite/images/focus.png" alt=""></span>
+				                    <i>${item.watch}</i>
+			                    </div>
+			                </section>
+				        </div> `
+				        }).join('');
+				     $('.works_exh').html(html);
+				}
+			})
+
+
+			$.ajax({
+				type:'get',
+				url:'http://localhost:55555/rencai',
+				data:{
+
+				},
+				dataType:'json',
+				success:function(res){
+					console.log(res)
+					let html = res.rencai.map(goods=>{
+						return `<li>
+	            	<a href="http://www.moko.cc/mtb/model/1352327/space.html">
+	                	<img src="${goods.rencai_img}" alt="">
+	                </a>
+	                <p>/${goods.rencai_name}</p>
+	                </li> `
+
+				    }).join('');
+				    $('.fix').html(html);
+				}
+			})
+
+			$('.rtn_home').on('click',function(){
+				$('#menu').show();
+			})
+			$('.rtn_left').on('click',function(){
+				$('#menu').hide();
+			})
+
+
+			 var a = $('#header'),
+			      b =a.offset();
+
+			    $(document).on('scroll',function(){
+			      var c = $(document).scrollTop();
+			  
+			      if(b.top<=c){
+			        a.css({'position':'fixed','top':'0px'})
+			        }else{
+			          a.css({'position':'relative','top':'0'})
+			         }
+               })
+
+
+			 $('.rtn_home').on('click',function(){
+			 	 $('.box').animate({left:'300'},500)
+			 	 console.log(666)
+			 })
+</script>
+<!--  -->
+</html>

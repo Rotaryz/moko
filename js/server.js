@@ -1,6 +1,8 @@
 $(function(){
 	var btnsend = $('.sub');
 	var img;
+	var username = location.search.slice(10);
+	console.log(username);
 	// 添加数据库
 	$('#form').on('change',function(){
 		doUpload();
@@ -40,9 +42,11 @@ $(function(){
 			},
 			success:function(str){
 				if(str === 'ok'){
-					alert('成功插入信息')
-				// location.href='';
+	
+				location.href='./users.html?username='+username;
 					
+				}else{
+					alert('输入的数据有误，请修改后在提交')
 				}
 			}
 		})

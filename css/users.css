@@ -1,0 +1,99 @@
+*{
+	font: 14px/1.5 Helvetica,Tahoma,sans-serif;
+}
+body{
+	background-color: rgb(245,245,245);
+}
+#pg-hd{
+	width: 100%;
+	background-color: #fe0877;
+	height: 43px;
+}
+.user{
+	padding:16px;
+	background-color: #fe0877;
+	overflow: hidden;
+}
+.user span{
+	display:block;
+	float: left;
+}
+.user-pic{
+	width: 70px;
+	height: 70px;
+	overflow: hidden;
+}
+#pg-bd .user-pic img{
+	width:100%;
+	height:100%;
+	border-radius: 50%;
+}
+.user-name{
+	height: 45px;
+	color: #fff;
+	font-size: 16px;
+	line-height: 55px;
+	margin-left: 16px;
+}
+.panel{
+	overflow: hidden;
+	background-color: #fff;
+}
+.panel h2{
+	height: 40px;
+	line-height: 40px;
+	padding-left: 16px;
+	font-size: 16px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.panel ul{
+	border-collapse: collapse;
+}
+.panel ul li{
+	width: 33%;
+	height: 80px;
+	display: block;
+	float: left;
+	text-align: center;
+	border-right: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+.panel li:nth-child(3n){
+    border-right: 0;
+}
+.panel li:nth-child(1),.panel li:nth-child(2),.panel li:nth-child(3){
+   border-bottom: 1px solid #e0e0e0;
+}
+.panel ul li>a{
+	display: inline-block;
+    margin-top: 17px;
+    color: #666;
+    position: relative;
+}
+li>a i{
+	position: absolute;
+	width:16px;
+	height: 16px;
+	line-height: 18px;
+	font-size: 12px;
+	border-radius: 50%;
+	background: #fe0877;
+	color: #fff;
+	right: -18px;
+	top:-8px;
+}
+button{
+	width:80%;
+	height:50px;
+	margin:30px 10% 0;
+	border:1px solid #b11e60;
+	background:#ff2173;
+	border-radius: 5px;
+}
+.login{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	line-height: 50px;
+	color:#fff;
+}

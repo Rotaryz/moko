@@ -107,7 +107,7 @@ $('#reg').on('click', () => {
 		},
 		success: data => {
 			if(data == '0') {
-				alert('恭喜你，注册成功，前往登录！！！');
+				location.href = '../html/server.html?username='+username.val();
 			}
 			if(data == '1') {
 				alert('用户名已被注册')
@@ -115,7 +115,7 @@ $('#reg').on('click', () => {
 		}
 	});
 });
-
+// 登录
 $('#login').on('click', () => {
 	let username = $('#username');
 	let password = $('#password');
@@ -134,7 +134,7 @@ $('#login').on('click', () => {
 				alert('用户名或密码错误');
 			}
 			if(data == '1') {
-				alert('登陆成功');
+				location.href = '../html/users.html?username='+username.val();
 			}
 		}
 	});
