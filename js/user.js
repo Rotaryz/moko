@@ -3,6 +3,8 @@ $(function() {
 	// 跳转
 	$('.weui-tabbar').on('click','.index',function(){
 		location.href='../index.html'
+	}).on('click','.quan',function(){
+		location.href='../html/quan.html'
 	})
 	
 	// 获取username
@@ -115,7 +117,10 @@ $(function() {
 					}
 					$('.collect').find('i').html(collect.length);
 					// 礼物
-					$('.gift').find('i').html(mine.gift)
+					$('.gift').find('i').html(mine.gift);
+					$('.quan').on('click',function(){
+						location.href = '../html/community.html?username='+mine.username;
+					})
 				}
 
 			})

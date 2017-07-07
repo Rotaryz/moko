@@ -133,9 +133,24 @@ app.get('/mine', function(req, res) {
 	var tatol = req.query
 	createConnection();
 	connection.connect();
-	require('./route/mine.js').mine(req, res, connection, tatol)
+	require('./route/mine.js').mine(req, res,connection, tatol)
 });
-
+//储存圈子的数据
+app.post('/quan', function(req, res) {
+	res.append('Access-Control-Allow-Origin', '*');
+	createConnection();
+	connection.connect();
+	var tatol = req.body;
+	require('./route/quan.js').quan(req, res, tatol, connection);
+});
+//获取圈子数据
+app.get('/quanse', function(req, res) {
+	res.append('Access-Control-Allow-Origin', '*');
+	// 查询数据库
+	createConnection();
+	connection.connect();
+	require('./route/quan.js').quanse(req, res, connection)
+})
 var server = app.listen(55555, function(host, port) {
 	var host = server.address().address;
 	var port = server.address().port;

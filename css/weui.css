@@ -1414,7 +1414,7 @@ i.weui-tabbar__icon,
   padding: 15px;
   position: relative;
 }
-.weui-media-box:before {
+/*.weui-media-box:before {
   content: " ";
   position: absolute;
   left: 0;
@@ -1428,7 +1428,7 @@ i.weui-tabbar__icon,
   -webkit-transform: scaleY(0.5);
           transform: scaleY(0.5);
   left: 15px;
-}
+}*/
 .weui-media-box:first-child:before {
   display: none;
 }

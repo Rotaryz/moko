@@ -1,0 +1,25 @@
+#header{
+	width: 100%;
+	background-color: #fe0877;
+	height: 43px;
+}
+#header p{
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	line-height: 43px;
+}
+.q_head{
+	float: left;
+	width:80px;
+	height:80px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+.weui-media-box__info{
+	float: right;
+}
+.weui-media-box{
+	border-top: none;
+	margin-top: 15px;
+}

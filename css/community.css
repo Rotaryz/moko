@@ -8,3 +8,13 @@ h1{
 	padding: 35px 0;;
 	padding-top: 50px;
 }
+#send{
+	font-size: 14px;
+	color:#E9E9E9;
+	float: right;
+	line-height: 43px;
+	margin-right: 10px;
+}
+.weui-cell{
+	border:1px solid #EDEDED;
+}

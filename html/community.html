@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html ng-controller="appCtrl">
+<html ng-app="ngApp">
 
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title></title>
 		<link rel="stylesheet" href="../css/weui.css">
+		<link rel="stylesheet" href="../css/community.css" />
 		<style type="text/css">
 			#pg-hd {
 				width: 100%;
@@ -31,20 +32,21 @@
 		</style>
 	</head>
 
-	<body ng-app="mokoApp">
+	<body >
 		<div id="pg-hd" ng-controller="headerCtrl">
 			<span>
-				<img src={{img}}/>
+				<img ng-src="{{img}}"/>
 			</span>
-			<span id="send" ng-click="show()">发送</span>
+			<span id="send" ng-click="tatol()">发送</span>
 		</div>
 		<div class="weui-cell" ng-controller="textareaCtrl">
 			<div class="weui-cell__bd">
-				<textarea class="weui-textarea" ng-keydown="show()" placeholder="请输入文本" rows="8" maxlength="200"></textarea>
-				<div class="weui-textarea-counter"><span ng-bind="msg">0</span>/200</div>
+				<textarea class="weui-textarea" ng-keydown="show()" placeholder="请输入文本" rows="8" maxlength="200" ng-model="content" ng-blur="tatol()"></textarea>
+				<div class="weui-textarea-counter"><span ng-bind="length">0</span>/200</div>
 			</div>
 		</div>
-		<div class="weui-cell" ng-controller="picCtrl">
+		<!--图片-->
+		<!--<div class="weui-cell" ng-controller="imgCtrl">
 			<div class="weui-cell__bd">
 				<div class="weui-uploader">
 					<div class="weui-uploader__hd">
@@ -52,40 +54,18 @@
 						<div class="weui-uploader__info">0/2</div>
 					</div>
 					<div class="weui-uploader__bd">
-						<ul class="weui-uploader__files" id="uploaderFiles">
+						<ul class="weui-uploader__files" id="uploaderFiles" ng-show="imghead">
+							<li class="weui-uploader__file" style="background-image:url()"></li>
 						</ul>
 						<form class="weui-uploader__input-box" id="uploadForm">
-							<input id="uploaderInput" class="weui-uploader__input" type="file" name="pic">
+							<input id="uploaderInput" class="weui-uploader__input pic" type="file" name="pic">
 						</form>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 	</body>
 	<script src="../lib/angular.js"></script>
 	<script src="../lib/jquery-3.2.1.js"></script>
-	<script>
-		let app = angular.module('mokoApp', []);
-		app.controller("headerCtrl", function($scope) {
-			$scope.img = '../img/community-return.png';
-			$.ajax({
-				url: '',
-				type: '',
-				cache: false,
-				data: new FormData($('#uploadForm')[0]),
-				processData: false,
-				contentType: false,
-				success: data => {
-
-				}
-			})
-		});
-		app.controller("textareaCtrl", function($scope) {
-			$scope.msg = 0;
-			$scope.show = () => {
-				$scope.msg = $('.weui-textarea').val().length + 1;
-			}
-		});
-	</script>
-
+	<script src="../js/community.js"></script>
 </html>

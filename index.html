@@ -472,14 +472,14 @@
     </div> -->
     <!-- 底部导航 -->
     <div class="weui-tabbar" style="position: fixed;">
-		<a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+		<a href="javascript:;" class="weui-tabbar__item weui-bar__item_on index">
 			<span style="display: inline-block;position: relative;">
                     <img src="images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
                     <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
 			</span>
 			<p class="weui-tabbar__label">模特</p>
 		</a>
-		<a href="javascript:;" class="weui-tabbar__item">
+		<a href="javascript:;" class="weui-tabbar__item quan">
 			<span style="display: inline-block;position: relative;">
                     <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
                     <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
@@ -507,6 +507,8 @@
 	$('.weui-tabbar').on('click','.mine',function(){
 		console.log(this)
 		location.href='html/users.html'
+	}).on('click','.quan',function(){
+		location.href='html/quan.html'
 	})
 			var mySwiper = new Swiper('.swiper-container', {
 				autoplay: 5000,//可选选项，自动滑动
