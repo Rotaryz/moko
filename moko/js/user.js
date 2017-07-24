@@ -1,16 +1,16 @@
 $(function() {
-	
+
 	// 跳转
-	$('.weui-tabbar').on('click','.index',function(){
-		location.href='../index.html'
-	}).on('click','.quan',function(){
-		location.href='../html/quan.html'
+	$('.weui-tabbar').on('click', '.index', function() {
+		location.href = '../index.html'
+	}).on('click', '.quan', function() {
+		location.href = '../html/quan.html'
 	})
-	
+
 	// 获取username
 	var username = location.search.slice(10);
 	// 判断用户是否登录
-	if(username != ''){
+	if(username != '') {
 		$('.btngo').hide();
 		// 把图片路径存入数据库并下载到当前的文件夹中
 		function gethead() {
@@ -29,23 +29,17 @@ $(function() {
 				}
 			})
 		}
-		function newimg(img){
+
+		function newimg(img) {
 			$.ajax({
 				type: 'POST',
-				url:'http://localhost:55555/newsimg',
-				data:{
-					img:img,
-					username:username
+				url: 'http://localhost:55555/newsimg',
+				data: {
+					img: img,
+					username: username
 				},
-				success:function(str){
+				success: function(str) {
 					console.log(str);
-					// if(str === 'ok'){
-		
-					// location.href='./users.html?username='+username;
-						
-					// }else{
-					// 	alert('输入的数据有误，请修改后在提交')
-					// }
 				}
 			})
 		}
@@ -53,9 +47,10 @@ $(function() {
 		$('.user-pic').on('click', function() {
 			getimg()
 		})
-		function getimg(){
+
+		function getimg() {
 			$("#headimg input").trigger("click");
-			$('#headimg').on('change',function(){
+			$('#headimg').on('change', function() {
 				gethead();
 			})
 		}
@@ -65,68 +60,84 @@ $(function() {
 			$.ajax({
 				url: 'http://localhost:55555/mine',
 				type: 'get',
-				data:{
-					username:username
+				data: {
+					username: username
 				},
-				dataType:'json',
+				dataType: 'json',
 				success: function(data) {
-					var mine= data.mine[0];
-					var msg,comment,mineMsg,systemMsg,collect;
+
+					var mine = data.mine[0];
+					//把id存入cookie
+					var time = new Date();
+					time.setDate(time.getDate() + 20)
+//					document.cookie = 'id=' + mine.id + ';expires=' + time;
+					function setCookie(name, val, expires, path) {
+						var str = name + '=' + val;
+						// 如果存在有效期
+						if(expires) {
+							str += ';expires=' + expires
+						}
+//						 /如果存在路径设置
+						if(path) {
+							str += ';path=' + path
+						}
+						document.cookie = str;
+					};
+					setCookie('id',mine.id,time)
+						var msg, comment, mineMsg, systemMsg, collect;
 					// 用户名
 					$('.user-name').html(mine.name);
 					// 头像
-					$('.user-pic img').attr('src',mine.img)
+					$('.user-pic img').attr('src', mine.img)
 					// 短信
-					if(mine.msg.indexOf(',') === -1){
+					if(mine.msg.indexOf(',') === -1) {
 						msg = [];
-						 msg.push(mine.msg);
-					}else{
+						msg.push(mine.msg);
+					} else {
 						msg = mine.msg.split(',');
 					}
 					$('.msg').find('i').html(msg.length);
 					// 我的评论
-					if(mine.minemsg.indexOf(',') === -1){
+					if(mine.minemsg.indexOf(',') === -1) {
 						mineMsg = [];
-						 mineMsg.push(mine.minemsg);
-					}else{
+						mineMsg.push(mine.minemsg);
+					} else {
 						mineMsg = mine.minemsg.split(',');
 					}
 					$('.mine').find('i').html(mineMsg.length);
 					// @我
-					if(mine.comment.indexOf(',') === -1){
+					if(mine.comment.indexOf(',') === -1) {
 						comment = [];
-						 comment.push(mine.comment);
-					}else{
+						comment.push(mine.comment);
+					} else {
 						comment = mine.comment.split(',');
 					}
 					$('.comment').find('i').html(comment.length);
 					// 系统信息
-					if(mine.systemmsg.indexOf(',') === -1){
+					if(mine.systemmsg.indexOf(',') === -1) {
 						systemMsg = [];
-						 systemMsg.push(mine.systemMsg);
-					}else{
+						systemMsg.push(mine.systemMsg);
+					} else {
 						systemMsg = mine.systemMsg.split(',');
 					}
 					$('.system').find('i').html(systemMsg.length);
 					// 收藏
-					if(mine.collect.indexOf(',') === -1){
+					if(mine.collect.indexOf(',') === -1) {
 						collect = [];
-						 collect.push(mine.collect);
-					}else{
+						collect.push(mine.collect);
+					} else {
 						collect = mine.collect.split(',');
 					}
 					$('.collect').find('i').html(collect.length);
 					// 礼物
 					$('.gift').find('i').html(mine.gift);
-					$('.quan').on('click',function(){
-						location.href = '../html/community.html?username='+mine.username;
+					$('.quan').on('click', function() {
+						location.href = '../html/community.html?username=' + mine.username;
 					})
+					//把id存入cookie
 				}
-
 			})
 		}
 	}
-
-		
 
 })
